@@ -1,0 +1,9 @@
+HTSeq==0.11.0
+numpy==1.13.3
+joblib==0.12.2
+pandas==0.20.3
+pysam==0.13.0
+pytest==3.2.1
+scipy==0.19.1
+setuptools>=36.5.0
+tqdm==4.23.4
