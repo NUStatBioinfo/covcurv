@@ -42,14 +42,20 @@ def gene_coverage(exon_df, chrom, coverage_files, output_dir=None, verbose=True)
                                               , axis=0)
     genes = exon_chrom_df['gene'].unique()
     n_genes = len(genes)
-    gene_splits = np.linspace(0
-                              , stop=n_genes
-                              , num=mem_splits
-                              , endpoint=True
-                              , dtype=int).tolist()
 
     # if no breaks (e.g. if set of genes very small), the breaks are [0, number of genes]
-    gene_splits = [0, n_genes] if mem_splits == 1 else gene_splits
+    if mem_splits == 1:
+        gene_splits = [0, n_genes]
+    else:
+        gene_splits = np.linspace(0
+                                  , stop=n_genes
+                                  , num=mem_splits
+                                  , endpoint=True
+                                  , dtype=int).tolist()
+        gene_splits = list(set(gene_splits))
+        gene_splits.sort()
+
+    mem_splits = len(gene_splits) - 1
 
     # output storage: (gene name, coverage matrix) key-value pairs.
     gene_cov_dict = dict()
@@ -70,7 +76,7 @@ def gene_coverage(exon_df, chrom, coverage_files, output_dir=None, verbose=True)
                              , unit='%')
 
     # create the coverage matrix for each subset of genes.
-    for i in range(mem_splits - 1):
+    for i in range(mem_splits):
 
         # subset exon data to current gene subset.
         sub_genes = genes[gene_splits[i]:gene_splits[i + 1]].tolist()

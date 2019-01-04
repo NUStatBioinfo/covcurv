@@ -200,6 +200,9 @@ def main():
     read_count_df.to_csv(read_count_file
                          , index=False)
 
+    del exon_df, read_count_df
+    gc.collect()
+
     # ---------------------------------------------------------------------------- #
     # Save coverage matrices into per-chromosome directories.
     # ---------------------------------------------------------------------------- #

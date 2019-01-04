@@ -6,10 +6,13 @@ setup(
     packages=['covcurv', 'covcurv.tests'],
     entry_points={
         'console_scripts': ['covcurv=covcurv.__main__:main',
-                            'covcurv_test=covcurv.tests.__test__:main'],
+                            'covcurv_test=covcurv.tests.__test__:main',
+                            'covcurv_app=covcurv.__main_server__:main'],
     },
     package_data={
-        'covcurv': ['resources/*', 'tests/data/*']
+        'covcurv': ['resources/*',
+                    'resources/shiny/*',
+                    'tests/data/*']
     },
     license='MIT',
     url='https://github.com/ffineis/DegNorm',

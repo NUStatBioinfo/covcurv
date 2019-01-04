@@ -326,6 +326,9 @@ class BamReadsProcessor():
             counts_df = reads_df[reads_df.pos.between(dat[i, 0], dat[i, 1])]
             counts[i] = counts_df[qname_col].unique().shape[0]
 
+        del reads_df
+        gc.collect()
+
         # turn read counts into a DataFrame so we can join on genes later.
         read_count_df = DataFrame({'chr': chrom
                                       , 'gene': gene_sub_df.gene.values
