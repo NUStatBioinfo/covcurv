@@ -1,5 +1,5 @@
 =================================================================
-covcurv: per-gene coverage arrays pipeline and visualization
+covcurv: per-gene coverage array pipeline and viz tool
 =================================================================
 
 .. image:: img/app_live.png
@@ -12,6 +12,8 @@ While there already exist many useful tools for computing genome-wide reads cove
 `covcurv` is the first **per-gene**, **multi-sample** reads coverage parsing and visualization tool. `covcurv` is a command line interface (CLI) tool
 and web application. It takes aligned read (.bam) files, along with a gene annotation (.gtf) file, and gives you per-gene reads coverage arrays and visualization capabilities in your web browser.
 At its core though, covcurv is just a Python package.
+
+In addition to being able to export individual gene coverage arrays and plots, as an added bonus ``covcurv`` will also dump read counts as well!
 
 +++++++++++++++++++
 Why covcurv?
@@ -72,6 +74,8 @@ a genome annotation (.gtf) file. ``covcurv`` works with paired and single reads.
      -o output_dir/covcurv_ezh2 \
      -g ezh2_data/genes.gtf \
      -p 4
+
+Coverage data and
 
 3. **Start the web app visualization tool with the ``covcurv_app`` command**. Just point ``covcurv_app`` to a ``covcurv`` output directory using the ``-d`` flag (for "data directory") and navigate to the web app's URL in your browser.
 Note: ``covcurv_app`` will only work if Python3 is is the default Python in your ``$PATH``. Otherwise, pass it the path to a Python3 binary with the ``--python`` flag.
