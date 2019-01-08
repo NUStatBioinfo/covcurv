@@ -31,15 +31,15 @@ If you want gene transcript coverage based on desirable CIGAR string-based read 
 How does it work?
 +++++++++++++++++++
 
-1. **Parse .gtf file** into (gene, exon)-tuple metadata.
+1. Parses .gtf file into (gene, exon)-tuple metadata.
     - Exons at the intersection of more than a single gene are removed.
     - Coverage arrays are a concatenation of a gene's exons.
 
-2. **Aligned reads files** are loaded (optionally in parallel, over chromosomes) and transformed into chromosome-wide coverage arrays.
+2. Aligned reads files get loaded (optionally in parallel, over chromosomes) and transformed into chromosome-wide coverage arrays.
     - Coverage is computed according to CIGAR score. Only "M" (match) segments contribute to coverage.
     - Paired read overlap only counts for "+1" coverage (it is not double counted).
 
-3. **Chromosome-wide coverage arrays are diced into gene arrays** in a memory efficient manner.
+3. Chromosome-wide coverage arrays get diced into gene arrays in a memory efficient manner.
 
 .. image:: img/chrom_coverage_dicing.png
    :height: 200px
