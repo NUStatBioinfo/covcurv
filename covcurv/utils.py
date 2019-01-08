@@ -185,7 +185,7 @@ def split_into_chunks(x, n):
     out = list()
     
     i = 0
-    while i*csize < len(x):
+    while i * csize < len(x):
         out.append(x[(i * csize):(i * csize + csize)])
         i += 1
 
