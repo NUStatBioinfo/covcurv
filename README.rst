@@ -65,7 +65,7 @@ a genome annotation (.gtf) file. ``covcurv`` works with paired and single reads.
         samtools index ${FILE/.bam/}'_sorted.bam' ${FILE/.bam/.bai}
     done
 
-2. **Run the ``covcurv`` pipeline**. Use ``-p`` to run with the pipeline in parallel with hyperthreading.
+2. **Run the covcurv pipeline**. Use ``-p`` to run with the pipeline in parallel with hyperthreading.
 
 .. code-block:: bash
 
@@ -77,7 +77,7 @@ a genome annotation (.gtf) file. ``covcurv`` works with paired and single reads.
 
 All coverage data and read counts will be sent to the ``output_dir/covcurv_ezh2`` output directory.
 
-3. **Start the web app visualization tool with the ``covcurv_app`` command**. Just point ``covcurv_app`` to a ``covcurv`` output directory using the ``-d`` flag (for "data directory") and navigate to the web app's URL in your browser.
+3. **Start the web app visualization tool with the covcurv_app command**. Just point ``covcurv_app`` to a ``covcurv`` output directory using the ``-d`` flag (for "data directory") and navigate to the web app's URL in your browser.
 Note: ``covcurv_app`` will only work if Python3 is is the default Python in your ``$PATH``. Otherwise, pass it the path to a Python3 binary with the ``--python`` flag.
 
 .. code-block:: bash
