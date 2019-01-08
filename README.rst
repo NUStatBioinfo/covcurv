@@ -116,7 +116,7 @@ Installation
 
 **This package is not yet on PyPi**.
 
- 1. Clone the covcurv repository and `cd` into it.
+1. Clone the covcurv repository and `cd` into it.
 
 .. code-block:: bash
 
