@@ -75,7 +75,7 @@ a genome annotation (.gtf) file. ``covcurv`` works with paired and single reads.
      -g ezh2_data/genes.gtf \
      -p 4
 
-Coverage data and
+All coverage data and read counts will be sent to the ``output_dir/covcurv_ezh2`` output directory.
 
 3. **Start the web app visualization tool with the ``covcurv_app`` command**. Just point ``covcurv_app`` to a ``covcurv`` output directory using the ``-d`` flag (for "data directory") and navigate to the web app's URL in your browser.
 Note: ``covcurv_app`` will only work if Python3 is is the default Python in your ``$PATH``. Otherwise, pass it the path to a Python3 binary with the ``--python`` flag.
@@ -90,7 +90,7 @@ Note: ``covcurv_app`` will only work if Python3 is is the default Python in your
    :align: center
 
 
-** ``covcurv`` arguments ** (run ``covcurv --help`` for man page)
+``covcurv`` arguments (run ``covcurv --help`` for man page):
 
 +----------------------------------+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |              Argument            |                 Required?                | Meaning                                                                                                                                                              |
