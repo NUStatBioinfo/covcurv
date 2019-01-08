@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='covcurv',
-    version='0.1.0',
+    version='0.1.1',
     packages=['covcurv', 'covcurv.tests'],
     entry_points={
         'console_scripts': ['covcurv=covcurv.__main__:main',
@@ -15,7 +15,7 @@ setup(
                     'tests/data/*']
     },
     license='MIT',
-    url='https://github.com/ffineis/DegNorm',
+    url='https://github.com/ffineis/DegNorm', #FIX THIS
     author='Frank Fineis',
     author_email='frankfineis2022@u.northwestern.edu',
     description='covcurv: parse RNA-seq samples into gene coverage matrices',
