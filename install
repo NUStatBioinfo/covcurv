@@ -6,8 +6,17 @@ if ! [ -x "$(command -v pip)" ]; then
   exit 1
 fi
 
+# check for Rscript.
+if ! [ -x "$(command -v Rscript)" ]; then
+  echo 'Error: Rscript is not available.' >&2
+  exit 1
+fi
+
 # install pip-able requirements.
 pip install -r py_requirements.txt
+
+# install required R packages.
+Rscript r_requirements.R
 
 # install covcurv.
 python setup.py install

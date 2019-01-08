@@ -15,7 +15,7 @@ setup(
                     'tests/data/*']
     },
     license='MIT',
-    url='https://github.com/ffineis/DegNorm', #FIX THIS
+    url='https://github.com/NUStatBioinfo/covcurv',
     author='Frank Fineis',
     author_email='frankfineis2022@u.northwestern.edu',
     description='covcurv: parse RNA-seq samples into gene coverage matrices',
